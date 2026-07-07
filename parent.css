@@ -1,0 +1,113 @@
+/* ==========================================
+   DESIGN SYSTÈME PARENT (Glassmorphism)
+   ========================================== */
+:root {
+    --primary-vert: #10B881;
+    --dark-bleu: #1F3962;
+    --white: #FFFFFF;
+}
+
+body {
+    background-color: var(--dark-bleu);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Header spécifique */
+.app-header {
+    background-color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.app-logo { height: 35px; }
+
+/* Conteneur principal */
+.main-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h2 { margin-bottom: 20px; text-align: center; font-weight: 600; }
+
+/* Carte Enfant (Glass Card) */
+.enfant-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.enfant-card h3 {
+    color: var(--primary-vert);
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.enfant-card p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+    opacity: 0.9;
+}
+
+/* Bouton d'action */
+.btn-action {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: var(--primary-vert);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* États de statut */
+.status-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.statut-valide { background: rgba(16, 184, 129, 0.3); color: #10B881; }
+.statut-pending { background: rgba(245, 158, 11, 0.3); color: #F59E0B; }
+.statut-refuse { background: rgba(239, 68, 68, 0.3); color: #EF4444; }
+
+.enfant-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.enfant-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-vert);
+}
+
+.classe-label {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-top: 5px !important;
+}
+

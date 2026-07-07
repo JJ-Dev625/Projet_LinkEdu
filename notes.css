@@ -1,0 +1,176 @@
+/* ==========================================================================
+   1. STRUCTURE GLOBALE
+   ========================================================================== */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #1F2937;
+  background-color: #F9FAFB;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notes-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 20px 95px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  /* --- PETIT BONUS POUR LE RENDU DESKTOP --- */
+  background-color: #FFFFFF; /* Force le fond blanc du téléphone */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Ajoute une ombre douce autour */
+  border-radius: 20px; /* Arrondit les angles du "téléphone" sur ordi */
+  min-height: 100vh; /* Force l'application à prendre toute la hauteur */
+}
+
+
+/* ==========================================================================
+   2. RECAP TRIMESTRE (Design épuré et gratifiant)
+   ========================================================================== */
+.summary-box {
+  background: linear-gradient(135deg, #1F3962, #112544); /* Dégradé bleu sérieux */
+  color: #FFFFFF;
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(31, 57, 98, 0.15);
+  margin-top: 10px;
+}
+
+.summary-box span {
+  font-size: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.summary-box h2 {
+  font-size: 32px;
+  margin: 0 0 8px 0;
+  font-weight: 800;
+}
+
+.mention {
+  font-size: 13px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   3. CARTES DE NOTES PAR MATIÈRE
+   ========================================================================== */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subject-notes-card {
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #F3F4F6;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header-row h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #1F2937;
+  font-weight: 700;
+}
+
+.subject-average {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+/* Dynamisme des couleurs selon les résultats */
+.text-green { background-color: #E6F7F0; color: #10B881; }
+.text-blue { background-color: #EBF2FC; color: #1F3962; }
+
+.coeff {
+  font-size: 11px;
+  color: #9CA3AF;
+  margin: 4px 0 12px 0;
+}
+
+/* Détail des notes individuelles */
+.notes-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #F9FAFB;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.note-item strong {
+  color: #1F2937;
+}
+
+/* ==========================================================================
+   4. BOTTOM NAV (Immuable)
+   ========================================================================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #E5E7EB;
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #9CA3AF;
+  gap: 4px;
+  width: 25%;
+}
+
+.nav-icon {
+  font-size: 20px;
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.nav-item.active {
+  color: #10B881; /* Ton vert émeraude */
+}
+
+

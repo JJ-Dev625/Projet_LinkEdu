@@ -1,0 +1,59 @@
+/* splash.css */
+
+:root {
+  --primary-vert: #10B881;
+  --dark-bleu: #1F3962;
+  --black: #050505;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Empêche tout défilement */
+}
+
+.splash-screen {
+  /* Dégradé radial pour un effet de profondeur */
+  background: radial-gradient(circle at center, var(--dark-bleu) 0%, var(--black) 100%);
+  
+  /* Utilisation de 100dvh pour une hauteur mobile parfaite */
+  height: 100dvh;
+  width: 100vw;
+  
+  /* Flexbox pour le centrage absolu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.splash-logo {
+  /* Dimensions adaptatives */
+  width: 100%;
+  max-width: 130px; 
+  height: auto;
+  padding: 0 20px;
+  
+  /* Effets de fondu et de halo */
+  mix-blend-mode: screen; /* Fusionne le logo avec le dégradé */
+  opacity: 0.95;
+  filter: drop-shadow(0 0 15px rgba(16, 184, 129, 0.4)); /* Halo vert */
+  
+  /* Optimisation du rendu */
+  image-rendering: -webkit-optimize-contrast;
+  
+  /* Animation de pulsation douce */
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Animation pour rendre le chargement vivant */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
