@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkEdu — Réinventer le lien éducatif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+  <!-- HEADER RESPECTANT TON IDENTITÉ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <img src="assets/Images/logo.png" alt="LinkEdu Logo" class="app-logo" />
+        <span class="brand">LinkEdu</span>
+      </div>
+      <nav class="nav">
+        <a href="#probleme">Points de Friction</a>
+        <a href="#profils">Les 4 Piliers</a>
+        <a href="#fonctionnalites">Fonctionnalités</a>
+      </nav>
+      <span class="header-tag">L'EXCELLENCE NUMÉRIQUE</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION COMBINÉE (Inspirée de ton écran original) -->
+    <section class="hero-portal">
+      <div class="container hero-grid">
+        <div class="hero-text-side">
+          <span class="badge">Propulsés pour l’Excellence Numérique</span>
+          <h1>Réinventer le lien éducatif</h1>
+          <p class="hero-desc">
+            L'infrastructure moderne qui centralise la gestion scolaire et rapproche l'administration, les enseignants, les élèves et les parents.
+          </p>
+          <div class="hero-features-list">
+            <div class="mini-feat-item">✨ Inscriptions dématérialisées</div>
+            <div class="mini-feat-item">📊 Tableaux de bord dynamiques</div>
+            <div class="mini-feat-item">🔔 Alertes et suivi en temps réel</div>
+          </div>
+        </div>
+
+        <!-- FORMULAIRE TRADUIT DIRECTEMENT DE TON CAPTURE 1000673119.png -->
+        <div class="hero-form-side">
+          <div class="glass-login-card">
+            <h2>Bienvenue sur LinkEdu</h2>
+            <div class="green-divider"></div>
+            <p class="card-subtitle">Votre scolarité à portée de main. Connectez-vous pour accéder à votre espace.</p>
+            
+            <h3 class="form-title">Connexion à mon compte</h3>
+            
+            <!-- Sélecteur de profils -->
+            <div class="profile-selector">
+              <button class="profile-btn active">Élève</button>
+              <button class="profile-btn">Enseignant</button>
+              <button class="profile-btn">Parent</button>
+              <button class="profile-btn">Admin</button>
+            </div>
+
+            <form class="auth-form" onsubmit="return false;">
+              <div class="input-group">
+                <label>Matricule / Email</label>
+                <div class="input-wrapper">
+                  <span class="icon-placeholder">👤</span>
+                  <input type="text" placeholder="Ex: LE-2026-045" />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label>Mot de passe</label>
+                <div class="input-wrapper">
+                  <span class="icon-placeholder">🔒</span>
+                  <input type="password" placeholder="********" />
+                  <span class="icon-placeholder eye-icon">👁️</span>
+                </div>
+              </div>
+
+              <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+
+              <button type="submit" class="btn-submit">Se connecter</button>
+            </form>
+
+            <div class="card-footer-campaign">
+              <p>📢 CAMPAGNE D'INSCRIPTION OUVERTE</p>
+              <a href="assets/Pages/Admin.html" class="btn-register">🎓 S'inscrire maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION DES POINTS DE FRUCTION (PAIN POINTS) -->
+    <section class="section problem-section" id="probleme">
+      <div class="container">
+        <h2 class="section-title">Les défis de la gestion scolaire actuelle</h2>
+        <p class="section-subtitle">Chaque acteur fait face à des obstacles quotidiens. LinkEdu élimine ces barrières.</p>
+        
+        <div class="grid-4">
+          <div class="pain-card">
+            <div class="card-img-placeholder"><img src="assets/Images/admin-pain.png" alt="Illustration Administration" /></div>
+            <h3>Administration</h3>
+            <p>Saisie manuelle fastidieuse, pertes de documents physiques et manque de visibilité globale sur les effectifs.</p>
+          </div>
+          <div class="pain-card">
+            <div class="card-img-placeholder"><img src="assets/Images/teacher-pain.png" alt="Illustration Enseignant" /></div>
+            <h3>Enseignants</h3>
+            <p>Heures perdues dans la paperasse administrative au détriment de l'accompagnement des élèves.</p>
+          </div>
+          <div class="pain-card">
+            <div class="card-img-placeholder"><img src="assets/Images/student-pain.png" alt="Illustration Élève" /></div>
+            <h3>Élèves</h3>
+            <p>Manque de clarté sur les notes actuelles, les absences et les ressources d'apprentissage.</p>
+          </div>
+          <div class="pain-card">
+            <div class="card-img-placeholder"><img src="assets/Images/parent-pain.png" alt="Illustration Parent" /></div>
+            <h3>Parents</h3>
+            <p>Isolement du parcours scolaire, découvertes tardives des notes ou des absences non justifiées.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION HISTOIRE & SOLUTIONS DES 4 PILIERS -->
+    <section class="section pillars-section" id="profils">
+      <div class="container">
+        <h2 class="section-title">Un écosystème interconnecté</h2>
+        <div class="pillar-row">
+          <div class="pillar-text">
+            <span class="pillar-tag">01 / L'ADMINISTRATION</span>
+            <h3>Piloter l'établissement avec sérénité</h3>
+            <p>Générez des rapports automatisés, centralisez les flux d'inscription et surveillez la santé globale de l'école depuis une source d'information unique.</p>
+          </div>
+          <div class="pillar-graphic">
+            <img src="assets/Images/admin-dashboard-view.png" alt="Aperçu Dashboard Admin" class="mockup-img" />
+          </div>
+        </div>
+
+        <div class="pillar-row reverse">
+          <div class="pillar-text">
+            <span class="pillar-tag">02 / LES ENSEIGNANTS</span>
+            <h3>Se recentrer sur l'essentiel : la transmission</h3>
+            <p>Remplissez le cahier de texte numérique, effectuez l'appel en un clic et transmettez instantanément les évaluations depuis une console épurée.</p>
+          </div>
+          <div class="pillar-graphic">
+            <img src="assets/Images/teacher-dashboard-view.png" alt="Aperçu Console Professeur" class="mockup-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 LinkEdu. Propulsés pour l’Excellence.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

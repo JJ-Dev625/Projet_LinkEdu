@@ -19,7 +19,7 @@
     </div>
     <div class="progress-container">
       <span class="progress-text">Étape 2 sur 3 : Infos & Pièces</span>
-      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 66%;"></div></div>
     </div>
   </header>
 
@@ -78,45 +78,60 @@
           </div>
         </div>
 
-        <div class="upload-grid">
-          
-          <div class="upload-card">
-            <label class="doc-label">Acte de naissance / ID *</label>
-            <div class="drop-zone">
-              <i class="fa-solid fa-address-card drop-icon"></i>
-              <span class="drop-text">Ajouter</span>
-              <input type="file" id="file-id" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
-            </div>
-          </div>
+      <div class="upload-grid">
+  <!-- Répète cette structure pour chaque fichier (file-id, file-bulletin, file-medical, file-photo) -->
+  <div class="upload-card">
+    <label class="doc-label">Acte de naissance / ID *</label>
+    <div class="drop-zone">
+      <i class="fa-solid fa-address-card drop-icon"></i>
+      <span class="drop-text">Ajouter</span>
+      <input type="file" id="file-id" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
+    </div>
+    <div class="file-info" id="info-file-id" style="display:none;">
+      <span class="file-name">...</span>
+      <i class="fa-solid fa-eye" style="cursor:pointer;" onclick="visualiser('file-id')"></i>
+    </div>
+  </div>
 
-          <div class="upload-card">
-            <label class="doc-label">Dernier Bulletin *</label>
-            <div class="drop-zone">
-              <i class="fa-solid fa-file-invoice drop-icon"></i>
-              <span class="drop-text">Ajouter</span>
-              <input type="file" id="file-bulletin" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
-            </div>
-          </div>
+  <div class="upload-card">
+    <label class="doc-label">Dernier Bulletin *</label>
+    <div class="drop-zone">
+      <i class="fa-solid fa-file-invoice drop-icon"></i>
+      <span class="drop-text">Ajouter</span>
+      <input type="file" id="file-bulletin" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
+    </div>
+    <div class="file-info" id="info-file-bulletin" style="display:none;">
+      <span class="file-name">...</span>
+      <i class="fa-solid fa-eye" style="cursor:pointer;" onclick="visualiser('file-bulletin')"></i>
+    </div>
+  </div>
 
-          <div class="upload-card">
-            <label class="doc-label">Certificat Médical *</label>
-            <div class="drop-zone">
-              <i class="fa-solid fa-file-medical drop-icon"></i>
-              <span class="drop-text">Ajouter</span>
-              <input type="file" id="file-medical" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
-            </div>
-          </div>
+  <div class="upload-card">
+    <label class="doc-label">Certificat Médical *</label>
+    <div class="drop-zone">
+      <i class="fa-solid fa-file-medical drop-icon"></i>
+      <span class="drop-text">Ajouter</span>
+      <input type="file" id="file-medical" class="file-input" accept=".pdf,.jpeg,.jpg,.png" required>
+    </div>
+    <div class="file-info" id="info-file-medical" style="display:none;">
+      <span class="file-name">...</span>
+      <i class="fa-solid fa-eye" style="cursor:pointer;" onclick="visualiser('file-medical')"></i>
+    </div>
+  </div>
 
-          <div class="upload-card">
-            <label class="doc-label">Photo d'identité *</label>
-            <div class="drop-zone">
-              <i class="fa-solid fa-camera drop-icon"></i>
-              <span class="drop-text">Prendre</span>
-              <input type="file" id="file-photo" class="file-input" accept=".jpeg,.jpg,.png" required>
-            </div>
-          </div>
-
-        </div>
+  <div class="upload-card">
+    <label class="doc-label">Photo d'identité *</label>
+    <div class="drop-zone">
+      <i class="fa-solid fa-camera drop-icon"></i>
+      <span class="drop-text">Prendre</span>
+      <input type="file" id="file-photo" class="file-input" accept=".jpeg,.jpg,.png" required>
+    </div>
+    <div class="file-info" id="info-file-photo" style="display:none;">
+      <span class="file-name">...</span>
+      <i class="fa-solid fa-eye" style="cursor:pointer;" onclick="visualiser('file-photo')"></i>
+    </div>
+  </div>
+</div>
 
         <div class="actions-section">
           <button type="submit" class="btn-submit-docs">Valider mon dossier</button>
@@ -130,6 +145,13 @@
   <footer class="app-footer">
     <p>Portail Élève LinkEdu | v1.2.0 | Tous droits réservés</p>
   </footer>
+  
+<!-- Modale de visualisation -->
+<div id="modal-visualisation" class="modal-hidden">
+  <div class="modal-backdrop" onclick="fermerVisualisation()"></div>
+  <span class="close-modal" onclick="fermerVisualisation()">&times;</span>
+  <div id="modal-content" class="modal-content"></div>
+</div>
 
   <script src="./Tele2.js"></script>
 </body>

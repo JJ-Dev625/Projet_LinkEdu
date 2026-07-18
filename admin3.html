@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - LinkEdu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin3.css">
+</head>
+<body>
+
+<div class="menu-burger" id="burger-menu"><i class="fa-solid fa-bars"></i></div>
+
+<nav class="sidebar" id="sidebar">
+    <div class="brand">LinkEdu Admin</div>
+    <div class="admin-profile-sidebar">
+      <img src="pro.png" alt="Admin" class="admin-avatar">
+      <span class="admin-name">Proviseur</span>
+    </div>
+   <ul class="nav-links">
+    <li data-target="dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+    <li data-target="traitement"><i class="fa-solid fa-list"></i> Candidatures</li>
+    <li data-target="valides"><i class="fa-solid fa-check-circle"></i> Inscrits</li>
+    <li data-target="refuses"><i class="fa-solid fa-times-circle"></i> Refusés</li>
+    <li data-target="enseignants"><i class="fa-solid fa-chalkboard-user"></i> Enseignants</li>
+</ul>
+    <button class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</button>
+</nav>
+
+<main class="content"></main>
+
+<!-- Modale de visualisation -->
+<div id="modal-visualisation" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:2000; justify-content:center; align-items:center;">
+    <div id="modal-content" style="background:#1e293b; padding:20px; border-radius:16px; width:90%; max-width:500px; text-align:center;"></div>
+</div>
+<footer class="admin-footer">
+    <p>LinkEdu Admin &copy; 2026 | Système de gestion scolaire v1.2.0</p>
+    <p>Développé par Jean Junior DIRAMBA MAMBOUNDOU - Bikélé, Gabon</p>
+</footer>
+
+<script src="admin3.js"></script>
+</body>
+</html>

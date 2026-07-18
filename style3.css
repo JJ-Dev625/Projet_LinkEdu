@@ -1,0 +1,155 @@
+/* ==========================================================================
+   CHARTE GRAPHIQUE LINKEDU (Landing Page Harmonisée)
+   ========================================================================== */
+:root {
+  --primary-vert: #10B881;
+  --dark-bleu: #1F3962;
+  --neutral-gray: #9CA3AF;
+  --white: #FFFFFF;
+  --black: #050505;
+  --orange-alert: #F59E0B;
+  --bg-gradient: linear-gradient(180deg, #050505 0%, #1F3962 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+/* Header & Nav */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(31, 57, 98, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+
+.brand { font-weight: 800; font-size: 1.5rem; color: var(--white); }
+
+.nav { display: flex; gap: 24px; color: var(--neutral-gray); font-weight: 500; }
+.nav a:hover { color: var(--primary-vert); transition: 0.3s; }
+
+/* Boutons */
+.btn {
+  padding: 12px 24px; border-radius: 8px; font-weight: 600; text-align: center; transition: 0.3s;
+}
+
+.btn-primary { background: var(--primary-vert); color: var(--white); }
+.btn-primary:hover { box-shadow: 0 0 15px rgba(16, 184, 129, 0.4); }
+
+.btn-secondary { border: 1px solid var(--primary-vert); background: transparent; color: var(--white); }
+.btn-secondary:hover { background: var(--primary-vert); }
+
+/* Hero Section */
+.hero { padding: 80px 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
+.badge { color: var(--primary-vert); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 15px; display: block; }
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Sections */
+.section { padding: 80px 0; }
+h2 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; color: var(--white); }
+
+.grid-4, .grid-2 { display: grid; gap: 20px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+.card, .feature, .benefit {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px; border-radius: 16px;
+}
+
+.card h3, .feature h3, .benefit h3 { color: var(--primary-vert); margin-bottom: 10px; }
+
+/* Footer */
+.site-footer { 
+  padding: 40px; text-align: center; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  color: var(--neutral-gray); font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-grid, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+  .nav { display: none; }
+}
+/* --- CORRECTIONS HEADER --- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--dark-bleu); /* Fond bleu foncé comme sur ta capture */
+  border-bottom: none;
+}
+
+.brand { 
+  font-weight: 800; 
+  font-size: 1.5rem; 
+  color: var(--white); /* Logo en blanc */
+}
+
+/* --- CORRECTION DU BADGE --- */
+.badge { 
+  color: var(--primary-vert); 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  font-size: 0.75rem; 
+  margin-bottom: 15px; 
+  display: block;
+  border: none; /* On enlève la bordure */
+  padding: 0;
+  background: transparent;
+  letter-spacing: 0.5px;
+}
+
+/* --- CORRECTION DES BOUTONS ET LISTES (MOBILE) --- */
+.hero-actions { 
+  display: flex; 
+  gap: 15px; 
+  margin-bottom: 25px;
+}
+
+.hero-points {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-points li {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+/* On s'assure que sur mobile, les boutons s'empilent proprement sans se casser */
+@media (max-width: 640px) {
+  .hero-actions { 
+    flex-direction: column; 
+    width: 100%;
+  }
+  .btn { 
+    width: 100%; 
+    justify-content: center;
+  }
+}

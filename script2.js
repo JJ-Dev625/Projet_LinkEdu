@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const routes = {
         admin: "admin2.html",
-        enseignant: "prof.html",
-        parent: "parent.html",
+        enseignant: "prof2.html",
+        parent: "parent2.html",
         eleve: "dashboard1.html"
       };
 

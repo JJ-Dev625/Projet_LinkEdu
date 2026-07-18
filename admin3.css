@@ -1,0 +1,65 @@
+:root { --primary-vert: #10B881; --glass-bg: rgba(255, 255, 255, 0.08); --glass-border: 1px solid rgba(255, 255, 255, 0.1); }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #0f172a; color: #fff; display: flex; }
+.sidebar { width: 260px; background: #1e293b; height: 100vh; position: fixed; padding: 30px 20px; transition: 0.3s; z-index: 1000; }
+.brand { color: var(--primary-vert); font-weight: 800; text-align: center; margin-bottom: 30px; }
+.admin-avatar { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary-vert); margin-bottom: 10px; }
+.nav-links li { padding: 12px; margin-bottom: 10px; cursor: pointer; border-radius: 8px; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); }
+.nav-links li:hover { background: var(--primary-vert); }
+.content { margin-left: 260px; padding: 40px; flex: 1; }
+.glass-card { background: var(--glass-bg); backdrop-filter: blur(12px); border: var(--glass-border); padding: 25px; border-radius: 16px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+.stat-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; text-align: center; border: var(--glass-border); }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+td, th { padding: 12px; border-top: var(--glass-border); }
+.btn-action { padding: 8px 15px; border-radius: 6px; border: none; cursor: pointer; background: #374151; color: white; margin: 2px; }
+.btn-valider { background: var(--primary-vert); }
+.btn-refuser { background: #ef4444; }
+
+@media (max-width: 768px) {
+    /* On force la sidebar à se masquer par défaut */
+    .sidebar { 
+        transform: translateX(-100%); 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        z-index: 2000; /* Très haut pour passer devant tout */
+    }
+    
+    /* Quand elle est active, on l'affiche */
+    .sidebar.active { transform: translateX(0); }
+    
+    /* Le bouton burger doit être au-dessus de tout */
+    .menu-burger { 
+        display: block !important; 
+        position: fixed; 
+        top: 20px; 
+        left: 20px; 
+        z-index: 2500; 
+        background: #1e293b; 
+        padding: 10px; 
+        border-radius: 8px; 
+        cursor: pointer;
+    }
+    
+    /* Le contenu doit prendre toute la largeur */
+    .content { margin-left: 0 !important; padding: 70px 15px; }
+}
+
+.admin-footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    border-top: var(--glass-border);
+    color: #64748b;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 16px 16px;
+}
+
+/* S'assurer que le contenu principal occupe bien la hauteur */
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

@@ -22,9 +22,16 @@ body {
     padding: 30px 20px; 
     height: 100vh; 
     position: fixed; 
-    transition: 0.3s; 
+    transition: 0.3s ease; 
     z-index: 1000;
+    transform: translateX(0); /* Par défaut visible sur écran large */
 }
+
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); } /* Caché par défaut sur mobile */
+    .sidebar.active { transform: translateX(0); }
+}
+
 
 .brand { font-size: 1.4rem; font-weight: 800; color: var(--primary-vert); text-align: center; margin-bottom: 25px; }
 .admin-profile-sidebar { text-align: center; margin-bottom: 30px; }

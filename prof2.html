@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Enseignant | LinkEdu</title>
+  <link rel="stylesheet" href="prof2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Arrière-plan thématique fixe -->
+  <div class="background-wrapper"></div>
+  
+  <!-- Bouton de navigation mobile -->
+  <button class="burger-menu" onclick="toggleSidebar()" aria-label="Ouvrir le menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="wrapper">
+    <!-- Barre latérale de navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="app-title">LinkEdu</h2>
+        <div class="user-profile-sidebar">
+          <img src="i.jpg" alt="Profil Enseignant" class="profile-img" id="prof-img">
+          <p class="user-name" id="prof-name">Mme. Iris AVOMO</p>
+          <span class="role-text" id="prof-role">Prof. de Philosophie</span>
+        </div>
+      </div>
+      
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item active" onclick="showSection('dashboard', this)">
+            <a href="#"><i class="fa-solid fa-gauge"></i> Tableau de bord</a>
+          </li>
+          <li class="nav-item" onclick="showSection('notes', this)">
+            <a href="#"><i class="fa-solid fa-pen-nib"></i> Saisie des notes</a>
+          </li>
+          <li class="nav-item" onclick="showSection('cahier', this)">
+            <a href="#"><i class="fa-solid fa-book"></i> Cahier de texte</a>
+          </li>
+          <li class="nav-item" onclick="showSection('emploi', this)">
+            <a href="#"><i class="fa-solid fa-calendar-days"></i> Emploi du temps</a>
+          </li>
+          <li class="nav-item" onclick="showSection('presence', this)">
+            <a href="#"><i class="fa-solid fa-user-check"></i> Présences</a>
+          </li>
+        </ul>
+      </nav>
+
+      <footer class="sidebar-footer">
+        <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</a>
+      </footer>
+    </aside>
+
+    <!-- Zone principale de contenu -->
+    <main class="main-content">
+      
+      <!-- SECTION 1 : TABLEAU DE BORD (Visible par défaut) -->
+      <section id="dashboard" class="content-section">
+        <header class="top-bar">
+          <h1>Tableau de bord</h1>
+        </header>
+        <div class="dashboard-grid">
+          <article class="card stat-card">
+            <h3>Classes actives</h3>
+            <p id="count-classes">4</p>
+          </article>
+          <article class="card stat-card">
+            <h3>Étudiants</h3>
+            <p id="count-students">120</p>
+          </article>
+          <article class="card stat-card">
+            <h3>Notes en attente</h3>
+            <p id="count-notes">15</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 2 : SAISIE DES NOTES (Masquée) -->
+      <section id="notes" class="content-section" style="display: none;">
+        <header class="top-bar">
+          <h1>Saisie des notes</h1>
+        </header>
+        <div class="card layout-card">
+          <p class="section-placeholder">Sélectionnez une classe pour commencer la saisie des évaluations.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 3 : CAHIER DE TEXTE (Masquée) -->
+      <section id="cahier" class="content-section" style="display: none;">
+        <header class="top-bar">
+          <h1>Cahier de texte numérique</h1>
+        </header>
+        <div class="card layout-card">
+          <form id="cahierForm" class="interactive-form">
+            <div class="history-section" style="margin-top: 30px;">
+             <h3>Historique des séances</h3>
+             <div id="cahierList" class="history-list">
+        </div>
+</div>
+
+            <div class="form-group">
+              <label for="cahierDate">Date de la séance</label>
+              <input type="date" id="cahierDate" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="cahierClasse">Classe concernée</label>
+              <select id="cahierClasse" required>
+                <option value="">-- Choisir une classe --</option>
+                <option value="TleA1">Terminale A1</option>
+                <option value="TleA2">Terminale A2</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cahierContenu">Résumé du cours magistral</label>
+              <textarea id="cahierContenu" rows="4" placeholder="Ex: Chapitre II : La Conscience et l'Inconscient. Analyse de la pensée cartésienne..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="cahierDevoir">Travail à faire (Devoirs / Lectures)</label>
+              <textarea id="cahierDevoir" rows="3" placeholder="Ex: Lire le texte de Spinoza page 42 et répondre aux questions 1 et 2 pour la prochaine séance."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Enregistrer la séance</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 4 : EMPLOI DU TEMPS (Masquée) -->
+      <section id="emploi" class="content-section" style="display: none;">
+        <header class="top-bar">
+          <h1>Emploi du temps</h1>
+        </header>
+        <div class="card layout-card">
+          <p class="section-placeholder">Chargement de votre planning hebdomadaire...</p>
+        </div>
+      </section>
+
+      <!-- SECTION 5 : PRÉSENCES (Masquée) -->
+      <section id="presence" class="content-section" style="display: none;">
+        <header class="top-bar">
+          <h1>Appel numérique</h1>
+        </header>
+        <div class="card layout-card">
+          <p class="section-placeholder">Faire l'appel pour la séance du jour.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Pied de page global -->
+  <footer class="app-footer">
+    <p>LinkEdu © 2026 | Système d'Information Académique</p>
+  </footer>
+
+  <script src="prof.js"></script>
+</body>
+</html>
